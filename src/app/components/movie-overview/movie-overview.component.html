@@ -1,0 +1,40 @@
+
+  <div class="container-fluid">
+
+      <h2 class="text-left">Movie Overview</h2>
+      <div class="row mt-2" *ngIf="movieDetails">
+          <div class="col-4">
+              <div class="card" style="width: 18rem; left: 16rem;" >
+                  <img [src]="'https://image.tmdb.org/t/p/w220_and_h330_face/'+movieDetails.poster_path" class="card-img-top" >
+                  <div class="card-body">
+                    <h5 class="card-title">{{movieDetails.title}}</h5>
+                    <p class="card-text">{{movieDetails.tagline}}</p>
+                  </div>
+                </div>
+  
+          </div>
+  
+          <div class="col-4">
+               <h1>{{movieDetails.title}}</h1>
+               <h3>{{movieDetails.tagline}}</h3>
+               <p>{{movieDetails.overview}}</p>
+               <p>Released on: {{movieDetails.release_date}}</p>
+               <p>User Score: {{movieDetails.vote_average*10}}%</p>
+               <button *ngIf="!isFav" type="button" class="btn btn-primary" (click)="addToFavourites()"><i class="bi bi-heart"></i> Add To Favourites</button>
+               <button *ngIf="isFav" type="button" class="btn btn-primary" (click)="removeFromFavourites()" ><i class="bi bi-heart-fill"></i></button>
+          </div>
+
+          <div class="col-4">
+            <div class="card" style="width: 18rem;" >
+                <img [src]="'https://image.tmdb.org/t/p/w220_and_h330_face/'+movieDetails.backdrop_path" class="card-img-top" >
+                <div class="card-body">
+                  <h5 class="card-title">{{movieDetails.title}}</h5>
+                  <p class="card-text">{{movieDetails.tagline}}</p>
+                </div>
+              </div>
+          </div>
+      </div>
+
+      
+
+  </div>

@@ -1,0 +1,13 @@
+<div class="container-fluid">
+    <h2 class="text-left">My Favourite Movies</h2>
+    <div class="row mt-3">
+        <div class="card mt-2 mb-2 g-2" style="width: 18rem; cursor: pointer;" *ngFor="let movie of moviesList" (click)="onClickMovie(movie.id)" >
+          <img [src]="'https://image.tmdb.org/t/p/w220_and_h330_face/'+movie.poster_path" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">{{movie.title}}</h5>
+            <p class="card-text">{{movie.original_language}}</p>
+          </div>
+        </div>
+   
+      </div>
+</div>
